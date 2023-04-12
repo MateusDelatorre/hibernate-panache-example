@@ -14,6 +14,7 @@ public class Channel extends PanacheEntity {
     private String hash;
 
     @ManyToMany(mappedBy = "channels", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<User> users;
 
     public Channel() {

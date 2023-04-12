@@ -14,6 +14,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 public class User extends PanacheEntity {
 
     private String name;
+    private String hash;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     // name = nome da coluna que irá armazenar a chave estrangeira
@@ -27,6 +28,14 @@ public class User extends PanacheEntity {
     public User() {
         this.messages = new ArrayList<>();
         this.channels = new ArrayList<>();
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setHash(String hash){
+        this.hash = hash;
     }
 }
 
